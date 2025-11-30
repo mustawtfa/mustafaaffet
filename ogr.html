@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangi Öğretmensin</title>
+    <link rel="stylesheet" href="ogr.css">
+</head>
+<body>
+    <div class="container">
+      
+        <div id="startScreen">
+            <h1> Hangi MSFL Öğretmenisin?</h1>
+            <p class="subtitle">20 soruyla ruh ikizin olan hocayı öğren!</p>
+            <button class="start-btn" onclick="startQuiz()">Start</button>
+        </div>
+
+   
+        <div id="quizContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="question-number">
+                Soru <span id="currentQuestion">1</span> / <span id="totalQuestions">20</span>
+            </div>
+            
+            <h2 class="question-text" id="questionText"></h2>
+            
+            <div class="options-container" id="optionsContainer"></div>
+            
+            <div class="navigation">
+                <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">← Önceki</button>
+                <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()">Sonraki →</button>
+            </div>
+        </div>
+
+       
+        <div id="resultScreen" style="display: none;">
+            <div class="result-container">
+                <h1> Sonucun:</h1>
+                <div class="winner-card">
+                    <h2>Sen</h2>
+                    <h3 id="winningPerson"></h3>
+                    <p class="score">Puan: <span id="winningScore"></span></p>
+                    <p class="description" id="descriptionText"></p>
+                </div>
+                
+                
+                
+                <button class="restart-btn" onclick="restartQuiz()"> Tekrar Dene</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ogr.js"></script>
+</body>
+</html>
