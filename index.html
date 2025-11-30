@@ -3,83 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangi Öğretmensin</title>
-    <link rel="stylesheet" href="ogr.css">
+    <title>Mustafa Affet - Öğren, Oyna, Kazan</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <!-- Animated Background -->
     <div class="bg-animation">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    
-    <!-- Grid Pattern Overlay -->
+
+    <!-- Grid Overlay -->
     <div class="grid-overlay"></div>
 
-    <div class="container">
-        <!-- Başlangıç Ekranı -->
-        <div id="startScreen">
-            <h1> Hangi MSFL Öğretmenisin?</h1>
-            <p class="subtitle">20 soruyla ruh ikizin olan hocayı öğren!</p>
-            <button class="start-btn" onclick="startQuiz()">Start</button>
-            
-            <!-- Alt kısıma eklenen bilgi ve buton -->
-            <div class="info-section" style="margin-top: 80px; text-align: center; padding: 40px 20px;">
-                <p style="font-size: 16px; font-weight: 300; letter-spacing: 2px; opacity: 0.7; margin-bottom: 30px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Bu test ile hangi MSFL öğretmenine benzediğini öğrenebilirsin! 
-                    Eğer daha fazla bilgi almak veya diğer testlere göz atmak istersen, 
-                    aşağıdaki butona tıklayabilirsin.
-                </p>
-                <button class="btn-secondary" onclick="window.location.href='ogr.html'" style="margin-top: 20px;">
-                    Diğer Testlere Göz At
-                </button>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Mustafa Affet</div>
+        <ul class="nav-links">
+            <li><a href="#anasayfa">Anasayfa</a></li>
+            <li><a href="#hakkinda">Hakkında</a></li>
+            <li><a href="#ozellikler">Özellikler</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+        <button class="nav-btn">Yakında</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="anasayfa">
+        <div class="hero-content">
+            <div class="hero-subtitle">GHV Mustafa Saffet Fen Lisesi</div>
+            <h1>Mustafa<br>Affet</h1>
+            <div class="hero-divider"></div>
+            <p>Dijital para birimi ile oyunlar oyna, başarılı ol ve ders notlarını kazanarak öğrenme yolculuğunu eğlenceli hale getir.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Yakında</button>
+                <button class="btn-secondary">Daha Fazla Bilgi</button>
             </div>
         </div>
+    </section>
 
-        <!-- Quiz Ekranı -->
-        <div id="quizContainer" style="display: none;">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-            
-            <div class="question-number">
-                Soru <span id="currentQuestion">1</span> / <span id="totalQuestions">20</span>
-            </div>
-            
-            <h2 class="question-text" id="questionText"></h2>
-            
-            <div class="options-container" id="optionsContainer"></div>
-            
-            <div class="navigation">
-                <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">← Önceki</button>
-                <button class="nav-btn next-btn" id="nextBtn" onclick="nextQuestion()">Sonraki →</button>
-            </div>
-        </div>
-
-        <!-- Sonuç Ekranı -->
-        <div id="resultScreen" style="display: none;">
-            <div class="result-container">
-                <h1> Sonucun:</h1>
-                <div class="winner-card">
-                    <h2>Sen</h2>
-                    <h3 id="winningPerson"></h3>
-                    <p class="score">Puan: <span id="winningScore"></span></p>
-                    <p class="description" id="descriptionText"></p>
+    <!-- Coming Soon Section -->
+    <section class="coming-soon" id="hakkinda">
+        <h2>Yapım Aşamasında</h2>
+        <div class="coming-soon-divider"></div>
+        <p>Platform şu anda geliştirilme aşamasında. En iyi deneyimi sunabilmek için çalışmalarımız devam ediyor.</p>
+        
+        <div class="progress-container">
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-title">Tasarım ve Arayüz</span>
+                    <span class="progress-percentage">75%</span>
                 </div>
-                
-                <button class="restart-btn" onclick="restartQuiz()"> Tekrar Dene</button>
-                
-                <!-- Sonuç ekranında da buton -->
-                <div style="margin-top: 50px; text-align: center;">
-                    <button class="btn-secondary" onclick="window.location.href='ogr.html'">
-                        Diğer Testlere Göz At
-                    </button>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <script src="ogr.js"></script>
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-title">Oyun Mekanikleri</span>
+                    <span class="progress-percentage">40%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-title">Ders Notu Sistemi</span>
+                    <span class="progress-percentage">30%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-title">Kullanıcı Sistemi</span>
+                    <span class="progress-percentage">60%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="ozellikler">
+        <div class="features-content">
+            <h2>Neler Sunuyoruz?</h2>
+            <div class="features-divider"></div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <div class="feature-title">Dijital Para Sistemi</div>
+                    <p class="feature-desc">Gerçek para kullanmadan, tamamen dijital para birimi ile güvenli ve eğlenceli bir deneyim.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <div class="feature-title">Ders Notları Ödülleri</div>
+                    <p class="feature-desc">Oyunlarda başarılı olarak kaliteli ders notlarına erişim kazanın ve öğrenmeye devam edin.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <div class="feature-title">Sıralama Sistemi</div>
+                    <p class="feature-desc">Sınıf arkadaşlarınla yarış, lider tablosunda yüksel ve başarılarını sergile.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">04</div>
+                    <div class="feature-title">Eğlenceli Oyunlar</div>
+                    <p class="feature-desc">Farklı oyun mekanikleri ile strateji geliştir ve eğlenirken öğren.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">05</div>
+                    <div class="feature-title">Yetenekli Bir Ekip</div>
+                    <p class="feature-desc">Mustafa ÇAKI, Kerem KARABIYIKOĞLU, Ahmet Eymen KIRAN ve Mehtap'ın katkılarıyla karşınıza güzel bir deneyim sunmak için elimizden geleni yapmaya çalışıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="iletisim">
+        <div class="footer-content">
+            <div class="footer-logo">Mustafa Affet</div>
+            <div class="footer-divider"></div>
+            <p>GHV Mustafa Saffet Fen Lisesi - Pendik</p>
+            <p>Eğitim amaçlı bağımsız öğrenci projesi</p>
+            <p class="disclaimer">Bu platform okul yönetimi tarafından yetkilendirilmemiştir ve resmi bir bağlantısı bulunmamaktadır.</p>
+        </div>
+    </footer>
 </body>
 </html>
