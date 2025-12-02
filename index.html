@@ -7,76 +7,91 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <!-- ========================================== -->
+    <!-- DOĞUM GÜNÜ QUIZ OVERLAY (MUHARREM HOCA) -->
+    <!-- ========================================== -->
     <div id="birthday-quiz-overlay">
         <div class="quiz-container">
 
+            <!-- GİRİŞ -->
             <div class="quiz-step" data-step="0">
                 <h1 class="intro-text" id="intro-text-1">BUGÜN NE GÜNÜ?</h1>
-                <h1 class="intro-text" id="intro-text-2">MUHARREM'İN DOĞUM GÜNÜ</h1>
+                <h1 class="intro-text" id="intro-text-2">MUHARREM HOCANIN DOĞUM GÜNÜ!</h1>
             </div>
 
+            <!-- SORU 1: BİYOLOJİ -->
             <div class="quiz-step" data-step="1">
-                <h2 class="question-title">MUHARREM HANGİSİNE ASLA HAYIR DİYEMEZ?</h2>
+                <h2 class="question-title">SORU 1: HÜCRENİN ENERJİ SANTRALİ HANGİSİDİR?</h2>
                 <div class="options-container">
-                    <button class="option-btn" data-correct="false">Ders Çalışmak</button>
-                    <button class="option-btn" data-correct="true">LoL Atmak</button> <!-- Cevabı değiştirebilirsin -->
-                    <button class="option-btn" data-correct="false">Erken Uyumak</button>
-                    <button class="option-btn" data-correct="false">Salata Yemek</button>
+                    <button class="option-btn" data-correct="false">Ribozom</button>
+                    <button class="option-btn" data-correct="true">Mitokondri</button>
+                    <button class="option-btn" data-correct="false">Koful</button>
+                    <button class="option-btn" data-correct="false">Lizozom</button>
                 </div>
             </div>
 
+            <!-- SORU 2: BİYOLOJİ -->
             <div class="quiz-step" data-step="2">
-                <h2 class="question-title">MUHARREM'İN DOĞUM GÜNÜ NE ZAMAN?</h2>
+                <h2 class="question-title">SORU 2: DNA'NIN YAPI BİRİMİ NEDİR?</h2>
                 <div class="options-container">
-                    <button class="option-btn" data-correct="false">1 Ocak</button>
-                    <button class="option-btn" data-correct="false">29 Şubat</button>
-                    <button class="option-btn" data-correct="false">30 Şubat</button>
-                    <button class="option-btn" data-correct="true">Bugün</button>
+                    <button class="option-btn" data-correct="true">Nükleotit</button>
+                    <button class="option-btn" data-correct="false">Aminoasit</button>
+                    <button class="option-btn" data-correct="false">Glikoz</button>
+                    <button class="option-btn" data-correct="false">Enzim</button>
                 </div>
             </div>
 
+            <!-- SORU 3: BİYOLOJİ -->
             <div class="quiz-step" data-step="3">
-                <h2 class="question-title">MUHARREM BU ALEMİN NESİDİR?</h2>
+                <h2 class="question-title">SORU 3: HANGİSİ SADECE BİTKİ HÜCRESİNDE BULUNUR?</h2>
                 <div class="options-container">
-                    <button class="option-btn" data-correct="false">Üyesidir</button>
-                    <button class="option-btn" data-correct="false">Misafiridir</button>
-                    <button class="option-btn" data-correct="true">Sefiridir</button>
-                    <button class="option-btn" data-correct="false">Turistidir</button>
+                    <button class="option-btn" data-correct="false">Çekirdek</button>
+                    <button class="option-btn" data-correct="false">Sitoplazma</button>
+                    <button class="option-btn" data-correct="true">Kloroplast</button>
+                    <button class="option-btn" data-correct="false">Mitokondri</button>
                 </div>
             </div>
 
+            <!-- SORU 4: ZAL SORUSU (HEPSİ DOĞRU) -->
             <div class="quiz-step" data-step="4">
-                <h2 class="question-title">MUHARREM ADAM MIDIR?</h2>
-                <div class="options-container single-option">
-                    <button class="option-btn" data-correct="true">ADAMIN DİBİDİR</button>
+                <h2 class="question-title">MUHARREM HOCANIN EN SEVDİĞİ ÖĞRENCİSİ KİMDİR?</h2>
+                <div class="options-container">
+                    <button class="option-btn" data-correct="true">ZAL</button>
+                    <button class="option-btn" data-correct="true">ZAL</button>
+                    <button class="option-btn" data-correct="true">ZAL</button>
+                    <button class="option-btn" data-correct="true">ZAL</button>
                 </div>
             </div>
 
+            <!-- SORU 5: İYİ Kİ DOĞMUŞ MU -->
             <div class="quiz-step" data-step="5">
                 <h2 class="question-title">İYİ Kİ DOĞMUŞ MU?</h2>
                 <div class="options-container single-option">
-                    <button class="option-btn" data-correct="true">EVET (Mecburen)</button>
+                    <button class="option-btn" data-correct="true">KESİNLİKLE EVET</button>
                 </div>
             </div>
 
+            <!-- SLIDER BÖLÜMÜ -->
             <div class="quiz-step" data-step="6">
-                <h2 class="question-title" id="love-slider-label">MUHARREM'İN KRALLIK SEVİYESİ</h2>
+                <h2 class="question-title" id="love-slider-label">MUHARREM HOCANIN KRALLIK SEVİYESİ</h2>
                 <div class="love-slider-container">
                     <div id="love-slider-track">
                         <div id="love-slider-thumb">👑</div> 
                     </div>
                 </div>
-                <div class="instruction-text">Sona kadar çek kirve...</div>
+                <div class="instruction-text">Sona kadar çekin hocam...</div>
             </div>
 
+            <!-- FİNAL -->
             <div class="quiz-step" data-step="7">
                 <h1 class="final-text" id="final-text-1">SINIRSIZ</h1>
-                <h1 class="final-text" id="final-text-2">İYİ Kİ DOĞDUN KRAL</h1>
+                <h1 class="final-text" id="final-text-2">İYİ Kİ DOĞDUNUZ HOCAM</h1>
                 <h1 class="final-text" id="final-text-3">Mustafa Affet Sunar...</h1>
             </div>
 
         </div>
     </div>
+    <!-- ========================================== -->
 
     <!-- Animated Background -->
     <div class="bg-animation">
