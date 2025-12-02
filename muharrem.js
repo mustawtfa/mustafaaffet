@@ -25,14 +25,15 @@ function initMuharremQuiz() {
 
     const textElements = document.querySelectorAll('.intro-text, .final-text');
     textElements.forEach(el => {
-        el.style.position = 'absolute';
+        el.style.position = 'fixed';
         el.style.left = '0';
         el.style.top = '50%';
-        el.style.width = '100%';
+        el.style.width = '100vw';
         el.style.textAlign = 'center';
         el.style.margin = '0';
         el.style.padding = '0';
-        el.style.transform = 'translateY(-50%)'; 
+        el.style.transform = 'translateY(-50%)';
+        el.style.zIndex = '10005';
     });
 
     setTimeout(() => {
