@@ -8,8 +8,8 @@ function checkDate() {
     const today = new Date();
     const currentMonth = today.getMonth();
     const currentDay = today.getDate();
-    
-    return (currentMonth === 11 && currentDay === 7 || currentMonth === 11 && currentDay === 2 || currentMonth === 11 && currentDay === 2);
+
+    return (currentMonth === 11 && (currentDay === 2 || currentDay === 7 || currentDay === 3));
 }
 
 function initMuharremQuiz() {
@@ -21,19 +21,24 @@ function initMuharremQuiz() {
     let confettiInterval;
 
     document.body.style.overflow = 'hidden';
-    
     overlay.style.display = 'flex';
+
+    const textElements = document.querySelectorAll('.intro-text, .final-text');
+    textElements.forEach(el => {
+        el.style.left = '0';
+        el.style.width = '100%';
+        el.style.textAlign = 'center';
+        el.style.transform = 'translateY(-50%)'; 
+    });
 
     setTimeout(() => {
         overlay.classList.add('visible');
     }, 100);
 
-    const starShape = confetti.shapeFromPath({ path: 'M5.127 3.616l2.77 1.516L7.33 8.24 4.382 6.54 1.378 8.16l.53-3.15-2.705-1.63 3.12-.13L3.92 0l1.206 3.48z' });
-
-    function startConfetti() { 
+    function startBackgroundConfetti() { 
         if (confettiInterval) return; 
         
-        const duration = 15 * 1000; 
+        const duration = 20 * 1000; 
         const animationEnd = Date.now() + duration; 
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 10001 }; 
 
@@ -42,7 +47,8 @@ function initMuharremQuiz() {
         confettiInterval = setInterval(function () { 
             const timeLeft = animationEnd - Date.now(); 
             if (timeLeft <= 0) return clearInterval(confettiInterval); 
-            const particleCount = 50 * (timeLeft / duration); 
+            
+            const particleCount = 30 * (timeLeft / duration); 
 
             confetti({ 
                 ...defaults, 
@@ -54,7 +60,7 @@ function initMuharremQuiz() {
         }, 250); 
     }
 
-    function intensifyConfetti() { 
+    function burstConfetti() { 
         confetti({ 
             particleCount: 100, 
             spread: 70, 
@@ -62,6 +68,38 @@ function initMuharremQuiz() {
             zIndex: 10001,
             colors: ['#FFD700', '#ffffff']
         }); 
+    }
+
+    function shootMassiveConfetti() {
+        const end = Date.now() + (5 * 1000);
+        const colors = ['#FFD700', '#ffffff', '#00BFFF'];
+
+        (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0, y: 0.6 },
+                colors: colors,
+                zIndex: 10002
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1, y: 0.6 },
+                colors: colors,
+                zIndex: 10002
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+
+        setTimeout(burstConfetti, 500);
+        setTimeout(burstConfetti, 1500);
+        setTimeout(burstConfetti, 2500);
     }
 
     function showStep(index) { 
@@ -73,13 +111,11 @@ function initMuharremQuiz() {
     }
 
     function handleCorrectAnswer() { 
-        intensifyConfetti(); 
+        burstConfetti();
         setTimeout(() => showStep(currentStepIndex + 1), 500); 
     }
 
     function handleWrongAnswer(button) { 
-        const currentStepElement = quizSteps[currentStepIndex]; 
-
         button.classList.add('shake');
         button.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
         
@@ -105,15 +141,15 @@ function initMuharremQuiz() {
         const text2 = document.getElementById('intro-text-2'); 
         
         showStep(0);
-        
+
         setTimeout(() => text1.classList.add('visible'), 500); 
         setTimeout(() => text1.style.opacity = '0', 2000); 
-        
+
         setTimeout(() => { 
             text2.classList.add('visible'); 
-            startConfetti();
+            startBackgroundConfetti();
         }, 2500); 
-        
+
         setTimeout(() => showStep(1), 4500);
     }
 
@@ -161,8 +197,7 @@ function initMuharremQuiz() {
         document.removeEventListener('touchmove', onDragMove); 
         document.removeEventListener('touchend', onDragEnd); 
 
-        intensifyConfetti(); 
-        intensifyConfetti(); 
+        shootMassiveConfetti(); 
         
         setTimeout(() => showStep(7), 500);
         runFinalSequence(); 
@@ -180,19 +215,17 @@ function initMuharremQuiz() {
         const final1 = document.getElementById('final-text-1'); 
         const final2 = document.getElementById('final-text-2'); 
         const final3 = document.getElementById('final-text-3'); 
-        
+
         setTimeout(() => final1.classList.add('visible'), 500); 
         setTimeout(() => final1.style.opacity = '0', 2500); 
-        
+
         setTimeout(() => final2.classList.add('visible'), 3000); 
         setTimeout(() => final2.style.opacity = '0', 5000); 
-        
+ 
         setTimeout(() => final3.classList.add('visible'), 5500); 
-        
-        // Kapanış
+
         setTimeout(() => {
             overlay.style.opacity = '0';
-            // Scroll'u geri aç
             document.body.style.overflow = 'auto';
         }, 8000); 
         
