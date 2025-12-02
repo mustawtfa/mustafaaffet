@@ -7,20 +7,81 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div id="birthday-quiz-overlay">
+        <div class="quiz-container">
+
+            <div class="quiz-step" data-step="0">
+                <h1 class="intro-text" id="intro-text-1">BUGÜN NE GÜNÜ?</h1>
+                <h1 class="intro-text" id="intro-text-2">MUHARREM'İN DOĞUM GÜNÜ</h1>
+            </div>
+
+            <div class="quiz-step" data-step="1">
+                <h2 class="question-title">MUHARREM HANGİSİNE ASLA HAYIR DİYEMEZ?</h2>
+                <div class="options-container">
+                    <button class="option-btn" data-correct="false">Ders Çalışmak</button>
+                    <button class="option-btn" data-correct="true">LoL Atmak</button> <!-- Cevabı değiştirebilirsin -->
+                    <button class="option-btn" data-correct="false">Erken Uyumak</button>
+                    <button class="option-btn" data-correct="false">Salata Yemek</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="2">
+                <h2 class="question-title">MUHARREM'İN DOĞUM GÜNÜ NE ZAMAN?</h2>
+                <div class="options-container">
+                    <button class="option-btn" data-correct="false">1 Ocak</button>
+                    <button class="option-btn" data-correct="false">29 Şubat</button>
+                    <button class="option-btn" data-correct="false">30 Şubat</button>
+                    <button class="option-btn" data-correct="true">Bugün</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="3">
+                <h2 class="question-title">MUHARREM BU ALEMİN NESİDİR?</h2>
+                <div class="options-container">
+                    <button class="option-btn" data-correct="false">Üyesidir</button>
+                    <button class="option-btn" data-correct="false">Misafiridir</button>
+                    <button class="option-btn" data-correct="true">Sefiridir</button>
+                    <button class="option-btn" data-correct="false">Turistidir</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="4">
+                <h2 class="question-title">MUHARREM ADAM MIDIR?</h2>
+                <div class="options-container single-option">
+                    <button class="option-btn" data-correct="true">ADAMIN DİBİDİR</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="5">
+                <h2 class="question-title">İYİ Kİ DOĞMUŞ MU?</h2>
+                <div class="options-container single-option">
+                    <button class="option-btn" data-correct="true">EVET (Mecburen)</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" data-step="6">
+                <h2 class="question-title" id="love-slider-label">MUHARREM'İN KRALLIK SEVİYESİ</h2>
+                <div class="love-slider-container">
+                    <div id="love-slider-track">
+                        <div id="love-slider-thumb">👑</div> 
+                    </div>
+                </div>
+                <div class="instruction-text">Sona kadar çek kirve...</div>
+            </div>
+
+            <div class="quiz-step" data-step="7">
+                <h1 class="final-text" id="final-text-1">SINIRSIZ</h1>
+                <h1 class="final-text" id="final-text-2">İYİ Kİ DOĞDUN KRAL</h1>
+                <h1 class="final-text" id="final-text-3">Mustafa Affet Sunar...</h1>
+            </div>
+
+        </div>
+    </div>
+
     <!-- Animated Background -->
     <div class="bg-animation">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
     <!-- Grid Overlay -->
@@ -145,7 +206,7 @@
                 <div class="feature-number">06</div>
                 <div class="feature-title">Hangi MSFL Öğretmenisin?</div>
                 <p class="feature-desc" style="font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
-                    (ERKEN ERİŞİM TUTARLILIK YÜZDE YÜZ DEĞİLDİR)20 soruluk eğlenceli bir test ile hangi msfl hocası olduğunu öğrenebilirsin!!!!!! 
+                    (ERKEN ERİŞİM TUTARLILIK YÜZDE YÜZ DEĞİLDİR) 20 soruluk eğlenceli bir test ile hangi msfl hocası olduğunu öğrenebilirsin!!!!!! 
                     Kişilik özelliklerin, tarzın ve yaklaşımların hangi öğretmenimizle örtüşüyor?? 
                     Hemen testi çöz ve ruh ikizin olan hocayı öğren!
                 </p>
@@ -166,5 +227,10 @@
             <p class="disclaimer">Bu platform okul yönetimi tarafından yetkilendirilmemiştir ve resmi bir bağlantısı bulunmamaktadır.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script src="muharrem.js"></script>
+
 </body>
 </html>
